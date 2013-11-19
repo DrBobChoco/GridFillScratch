@@ -3,12 +3,12 @@
 <head>
 	<title>Grid fill layout test</title>
 	<style type="text/css">
-		.gridOuter {
+		#gridOuter {
 			border: 1px solid #444;
 			width: 480px;
 			height: 480px;
 		}
-		.gridOuter div {
+		#gridOuter div {
 			width: 30px;
 			height: 30px;
 			float: left;
@@ -21,7 +21,7 @@
 			clear: both;
 		}
 	</style>
-	<script scr="jquery-1.10.2.js"></script>
+	<script src="jquery-1.10.2.js"></script>
 	<script>
 		layoutInfo = [
 			[1,0,1,0,1,0,1,0,1,1,1,0,1,0,1],
@@ -44,256 +44,55 @@
 </head>
 <body>
 	<h1>Layout Test</h1>
-	<div class="gridOuter">
-		<div class="block rowStart"></div>
-		<div class="space"></div>
-		<div class="block"></div>
-		<div class="space"></div>
-		<div class="block"></div>
-		<div class="space"></div>
-		<div class="block"></div>
-		<div class="space"></div>
-		<div class="block"></div>
-		<div class="block"></div>
-		<div class="block"></div>
-		<div class="space"></div>
-		<div class="block"></div>
-		<div class="space"></div>
-		<div class="block rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="block"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space rowEnd"></div>
-		<div class="block rowStart"></div>
-		<div class="space"></div>
-		<div class="block"></div>
-		<div class="space"></div>
-		<div class="block"></div>
-		<div class="space"></div>
-		<div class="block"></div>
-		<div class="space"></div>
-		<div class="block"></div>
-		<div class="block"></div>
-		<div class="block"></div>
-		<div class="space"></div>
-		<div class="block"></div>
-		<div class="space"></div>
-		<div class="block rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="block"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space rowEnd"></div>
-		<div class="space rowStart"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-		<div class="space"></div>
-	</div>
-</body>
-<!--
+	<div id="gridOuter"></div>
 <script>
-$(function(){
-	/*
+function groupClues() {
+	currClue = 1;
 	for(row=1; row<=15; row++) {
 		for(col=1; col<=15; col++) {
-			if(layoutInfo[row][col]) {
-				cellClass = "block";
-			} else {
-				cellClass = "space";
+			console.log('#gridOuter div[row="' + row + '"][col="' + col + '"] length - ' + $('#gridOuter div[row="' + row + '"][col="' + col + '"]').length);
+			if($('#gridOuter [row="' + row + '"][col="' + col + '"]').length &&
+				(
+					(
+						(row == 1 || $('#gridOuter [row="' + (row-1) + '"][col="' + col + '"]').length == 0) &&
+						$('#gridOuter [row="' + (row+1) + '"][col="' + col + '"]').length
+					) ||
+					(
+					 	(col == 1 || $('#gridOuter [row="' + row + '"][col="' + (col-1) + '"]').length == 0) &&
+						$('#gridOuter [row="' + row + '"][col="' + (col+1) + '"]').length
+					)
+				)
+			) {
+				$('#gridOuter [row="' + row + '"][col="' + col + '"]').text("" + currClue);
+				currClue++;
 			}
-			if(col == 1) {
-				cellClass += " rowStart";
-			} else if(col == 15) {
-				cellClass += " rowEnd";
-			}
-
 		}
 	}
-	*/
-	$(".gridOuter").add('<div class="block rowEnd"></div>');
-	console.log("Done the add");
+}
+
+$(function(){
+	for(row=0; row<15; row++) {
+		for(col=0; col<15; col++) {
+			if(layoutInfo[row][col]) {
+				cellClass = "block";
+				rowCol = 'row="' + row + '" col="' + col + '" ';
+			} else {
+				cellClass = "space";
+				rowCol = '';
+			}
+			if(col == 0) {
+				cellClass += " rowStart";
+			}
+			$("#gridOuter").append('<div ' + rowCol + 'class="' + cellClass + '"></div>');
+		}
+	}
+	groupClues();
+	$(".space").on("click", function(){
+		console.log("Click on r" + $(this).attr("row") + ",c" + $(this).attr("col"));
+		$("#gridOuter .space").css("background-color", "white");
+		$(this).css("background-color", "yellow");
+	});
 });
 </script>
--->
+</body>
 </html>
