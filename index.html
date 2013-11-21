@@ -50,19 +50,33 @@ function groupClues() {
 	currClue = 1;
 	for(row=1; row<=15; row++) {
 		for(col=1; col<=15; col++) {
-			console.log('#gridOuter div[row="' + row + '"][col="' + col + '"] length - ' + $('#gridOuter div[row="' + row + '"][col="' + col + '"]').length);
-			if($('#gridOuter [row="' + row + '"][col="' + col + '"]').length &&
-				(
-					(
-						(row == 1 || $('#gridOuter [row="' + (row-1) + '"][col="' + col + '"]').length == 0) &&
-						$('#gridOuter [row="' + (row+1) + '"][col="' + col + '"]').length
-					) ||
-					(
-					 	(col == 1 || $('#gridOuter [row="' + row + '"][col="' + (col-1) + '"]').length == 0) &&
-						$('#gridOuter [row="' + row + '"][col="' + (col+1) + '"]').length
-					)
-				)
-			) {
+			clueStart = false;
+
+			if($('#gridOuter [row="' + row + '"][col="' + col + '"]')[0] &&
+				(row == 1 || !$('#gridOuter [row="' + (row-1) + '"][col="' + col + '"]')[0]) &&
+				$('#gridOuter [row="' + (row+1) + '"][col="' + col + '"]')[0]) {
+
+				clueStart = true;
+				clueRow = row;
+				do {
+					$('#gridOuter [row="' + clueRow + '"][col="' + col + '"]').attr('down', currClue);
+					clueRow++;
+				} while($('#gridOuter [row="' + clueRow + '"][col="' + col + '"]')[0]);
+			}
+
+			if($('#gridOuter [row="' + row + '"][col="' + col + '"]')[0] &&
+				(col == 1 || !$('#gridOuter [row="' + row + '"][col="' + (col-1) + '"]')[0]) &&
+				$('#gridOuter [row="' + row + '"][col="' + (col+1) + '"]')[0]) {
+
+				clueStart = true;
+				clueCol = col;
+				do {
+					$('#gridOuter [row="' + row + '"][col="' + clueCol + '"]').attr('across', currClue);
+					clueCol++;
+				} while($('#gridOuter [row="' + row + '"][col="' + clueCol + '"]')[0]);
+			}
+
+			if(clueStart) {
 				$('#gridOuter [row="' + row + '"][col="' + col + '"]').text("" + currClue);
 				currClue++;
 			}
@@ -75,10 +89,10 @@ $(function(){
 		for(col=0; col<15; col++) {
 			if(layoutInfo[row][col]) {
 				cellClass = "block";
-				rowCol = 'row="' + row + '" col="' + col + '" ';
+				rowCol = '';
 			} else {
 				cellClass = "space";
-				rowCol = '';
+				rowCol = 'row="' + (row+1) + '" col="' + (col+1) + '" ';
 			}
 			if(col == 0) {
 				cellClass += " rowStart";
